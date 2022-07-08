@@ -65,7 +65,7 @@ Proceso
             esc(archrep, regrep)
         
         sino
-            esc('no se encontró, chau')        
+            esc('No se encontró')        
             
         fin_si  
 
@@ -95,7 +95,7 @@ Proceso
 
     fin_para 
     
-    esc('Se solicito una nueva auditoria ', nueva_aud, ' veces')
+    esc('Se solicitó una nueva auditoria ', nueva_aud, ' veces')
     
     cerrar(archrecl)
     cerrar(archrep)
