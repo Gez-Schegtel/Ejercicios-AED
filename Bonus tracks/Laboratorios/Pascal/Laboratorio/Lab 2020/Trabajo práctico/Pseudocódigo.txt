@@ -1,0 +1,69 @@
+Consigna del trabajo de cierre de Pascal.
+
+Se posee una archivo histórico con todos los clientes de un banco. Los datos almacenados son los siguientes:
+
+Numero_de_cuenta: longint
+Codigo_cliente: integer
+tipo: ‘ahorro’-’corriente’
+titular: string[50]
+saldo: real
+baja: ‘s’-’n’
+
+Se desea generar el proceso que recorra todo el archivo e informe:
+a. Cuántas cuentas tiene un código de cliente impar y están activas.
+b. Cuántas cuentas están activas.
+c. .Porcentaje de cuentas corrientes dadas de baja sobre el total de cuentas corrientes.
+
+Acción Banco ES;
+Ambiente
+	Clientes = Registro
+		número_de_cuenta: N(9);
+		código_cliente: N(5);
+		tipo: ('ahorro', 'cliente');
+		titular: AN(50);
+		saldo: N(7);
+		baja: ('s', 'n');
+	Fin registro
+
+	ArchClient: archivo de Clientes;
+	RegClient: Clientes;
+
+	ContA: entero;
+	ContB: entero;
+	ContC: entero;
+	Contot: entero;
+
+Proceso
+	Abrir(ArchClient);
+	Leer(ArchClient, RegClient);
+
+	ContA:= 0;
+	ContB:= 0;
+	ContC:= 0;
+	Contot:= 0;
+
+	Mientras NFDA(ArchClient) hacer
+		
+		Si (RegClient.código_cliente MOD 2 = 1) ^ (RegClient.baja = 'n') entonces
+			ContA:= ContA + 1;
+		Sino
+			Si (RegClient.baja = 'n') entonces
+				ContB:= ContB + 1;
+			Sino
+				Si (RegClient.baja = 's') entonces
+					ContC:= ContC + 1;
+				Fin si
+			Fin si
+		Fin si
+			Contot:= Contot + 1:
+
+			Leer(ArchClient, RegClient);
+
+	Fin mientras
+		Cerrar(ArchClient);
+		Esc('Cuentas activas con código de cliente impar >> ', ContA);
+		Esc('Cuentas activas >> ', (ContB+ContA));
+		Esc('Porcentaje de cuentas dadas de baja >> ', (ContC * 100)/Contot);
+		
+Fin acción
+

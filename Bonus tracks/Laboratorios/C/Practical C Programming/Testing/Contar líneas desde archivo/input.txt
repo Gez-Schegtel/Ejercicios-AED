@@ -1,0 +1,4 @@
+hola
+esto es 
+una prueba
+el resultado tendría que ser 4

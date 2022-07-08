@@ -1,0 +1,7 @@
+Sobre el trabajo:
+
+Para poder realizar un código en Pascal que al ejecutarlo, cumpla con la consigna, es necesario crear un archivo al que dicho código pueda acceder. Para ello, fue necesario hacer el código que está en la carpeta con el nombre de "Generar_archivo.pas". Este crea un archivo de extensión ".dat". Estos son un tipo de archivo que pascal puede crear y leer.
+
+Los "archivos.dat" no se pueden abrir en un editor de texto normal, ya que su contenido se muestra como si estuviera encriptado. Entonces, y aunque no sea necesario para cumplir la consigna, me pareció correcto hacer un código para poder leerlo correctamente. Este es el código "Leer_archivo.pas".
+
+Finalmente, el código "Banco.pas" es el que realiza la consigna requerida por los profesores. También hay un archivo en pseudocódigo de este archivo, llamado "Banco-pseudocódigo"
