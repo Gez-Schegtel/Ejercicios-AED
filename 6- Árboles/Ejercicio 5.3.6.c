@@ -28,7 +28,7 @@ Ambiente
         esc(*p.dato)
     fin_procedimiento
 
-Procedimiento
+proceso
     esc('El recorrido inorden del arbol es: ')
     enorden(prim)
 
@@ -38,4 +38,4 @@ Procedimiento
     esc('El recorrido postorden del arbol es: ')
     postorden(prim)
 
-fin_ejercicio
+fin_acción
